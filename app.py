@@ -10,7 +10,7 @@ def hello_world():
     return 'Missing Group ID'
 
 
-@app.route('/<int:group_id>')
+@app.route('/groups/<int:group_id>')
 def zotero_group(group_id):
     limit = 100
     start = limit
