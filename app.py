@@ -10,12 +10,15 @@ def hello_world():
     return 'Missing Group ID'
 
 
-@app.route('/groups/<int:group_id>')
-def zotero_group(group_id):
+@app.route('/groups/<int:group_id>', defaults={'key': None})
+@app.route('/groups/<int:group_id>/<key>')
+def zotero_group(group_id, key):
     limit = 100
     start = limit
     base_url = 'https://api.zotero.org/groups/' + str(group_id) + \
                '/items/top?format=bibtex&style=numeric&limit=' + str(limit)
+    if key:
+        base_url += "&key=" + str(key)
     req = requests.get(base_url)
     req_text = req.text
     buffer = StringIO()
