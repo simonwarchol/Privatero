@@ -1,4 +1,5 @@
 from flask import Flask, send_file
+from waitress import serve
 import requests
 from io import StringIO, BytesIO
 
@@ -42,4 +43,9 @@ def zotero_group(group_id, key):
 
     # show the post with the given id, the id is an integer
     # return 'Post %d' % post_id
+
+
 # https://api.zotero.org/groups/2579480/items/top?format=bibtex&style=numeric&limit=1000
+# run the app.
+if __name__ == "__main__":
+    serve(app, port=5000)
