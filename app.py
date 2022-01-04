@@ -1,8 +1,8 @@
-from flask import Flask, send_file, request
+from flask import Flask, send_file, request, render_template
 import requests
 from io import StringIO, BytesIO
 
-app = Flask(__name__, static_folder='assets', static_url_path='/assets')
+app = Flask(__name__, static_folder='assets', static_url_path='/assets', template_folder='assets')
 
 
 # http://54.160.74.94/groups/2526736/YLIMtolShWf0hRuvVcP2HFYa
@@ -16,6 +16,7 @@ def hello_world():
 def zotero_group():
     group_id = request.args.get('groupID')
     key = request.args.get('privateKey', default=None)
+    print('Request', group_id, key)
     limit = 100
     start = limit
     base_url = 'https://api.zotero.org/groups/' + str(group_id) + \
@@ -24,6 +25,9 @@ def zotero_group():
         base_url += "&key=" + str(key)
     req = requests.get(base_url)
     req_text = req.text
+    if req.ok is False:
+        #     Error Handling
+        return render_template('error.html', error_code=str(req.status_code), error_text=req_text)
     buffer = StringIO()
     buffer.write(req_text)
     # bib = req_text
