@@ -144,4 +144,5 @@ cython_debug/
 !.elasticbeanstalk/*.global.yml
 
 
- .idea/
+.idea/
+.idea/*
