@@ -1,18 +1,21 @@
-from flask import Flask, send_file
+from flask import Flask, send_file, request
 import requests
 from io import StringIO, BytesIO
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='assets', static_url_path='/assets')
 
+
+# http://54.160.74.94/groups/2526736/YLIMtolShWf0hRuvVcP2HFYa
 
 @app.route('/')
 def hello_world():
-    return 'Missing Group ID'
+    return app.send_static_file('index.html')
 
 
-@app.route('/groups/<int:group_id>', defaults={'key': None})
-@app.route('/groups/<int:group_id>/<key>')
-def zotero_group(group_id, key):
+@app.route('/bib')
+def zotero_group():
+    group_id = request.args.get('groupID')
+    key = request.args.get('privateKey', default=None)
     limit = 100
     start = limit
     base_url = 'https://api.zotero.org/groups/' + str(group_id) + \
