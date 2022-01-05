@@ -20,12 +20,17 @@ body {
     text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
     box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
     background-color: #27233A;
-    font-family: 'Merriweather';
+    font-family: 'Playfair Display';
 
 }
 
+.books {
+    height: 100%;
+    width: 100%;
+}
+
 h1 {
-    font-size: 10rem;
+    font-size: 7rem;
 }
 
 .cover-container {
@@ -36,8 +41,16 @@ h1 {
     display: none;
 }
 
-#url-button-div {
-    margin-top: 8vh;
+/*#url-button-div {*/
+/*    margin-top: 8vh;*/
+/*}*/
+
+#privateKeyHelp, #import {
+    font-size: 0.8rem;
+    color: #bcbcbd;
+    margin-bottom: 0.5rem;
 }
 
-
+#zootle-title {
+    color: #FF7477;
+}
