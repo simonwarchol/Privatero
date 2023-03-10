@@ -161,7 +161,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/zootle-serverless/prod/1642096590961-2022-01-13T17:56:30.961Z/zootle-serverless.zip"
+          "S3Key": "serverless/zootle-serverless/prod/1678462368681-2023-03-10T15:32:48.681Z/zootle-serverless.zip"
         },
         "Handler": "wsgi_handler.handler",
         "Runtime": "python3.8",
@@ -179,14 +179,14 @@
         "AppLogGroup"
       ]
     },
-    "AppLambdaVersionDDjlImwTuQpPE7ShDXaZaoxuL2aUckAeDIA54ACMk": {
+    "AppLambdaVersionOvFB1rL9KMVOlJOG3atxVkd9yV370crJVJJqX9wk": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AppLambdaFunction"
         },
-        "CodeSha256": "37stBAmgyua2vgVXLMIhUngnzDiyHtd03ubPQA9xAQ8="
+        "CodeSha256": "q/lkxZLA2Z2OGxwAeD4rAPlYjhLtN3eU3NgBE+ocOWk="
       }
     },
     "ApiGatewayRestApi": {
@@ -311,7 +311,7 @@
         "AppLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1642096578026": {
+    "ApiGatewayDeployment1678462275279": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -374,7 +374,7 @@
     "AppLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AppLambdaVersionDDjlImwTuQpPE7ShDXaZaoxuL2aUckAeDIA54ACMk"
+        "Ref": "AppLambdaVersionOvFB1rL9KMVOlJOG3atxVkd9yV370crJVJJqX9wk"
       },
       "Export": {
         "Name": "sls-zootle-serverless-prod-AppLambdaFunctionQualifiedArn"
