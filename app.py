@@ -98,6 +98,7 @@ def special_char_handle(bib):
     bib = reverse_replace(bib, r"{\'{\e}}", r"É")
     bib = reverse_replace(bib, r"{\'{\G}}", r"Ǵ")
     bib = reverse_replace(bib, r"{\'{\I}}", r"Í")
+    bib = reverse_replace(bib, r"{\.{\I}}", r"İ")
     bib = reverse_replace(bib, r"{\'{\n}}", r"Ń")
     bib = reverse_replace(bib, r"{\'{\O}}", r"Ó")
     bib = reverse_replace(bib, r"{\'{\r}}", r"Ŕ")
