@@ -115,7 +115,8 @@
                   "Effect": "Allow",
                   "Action": [
                     "logs:CreateLogStream",
-                    "logs:CreateLogGroup"
+                    "logs:CreateLogGroup",
+                    "logs:TagResource"
                   ],
                   "Resource": [
                     {
@@ -161,10 +162,10 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/zootle-serverless/prod/1678462368681-2023-03-10T15:32:48.681Z/zootle-serverless.zip"
+          "S3Key": "serverless/zootle-serverless/prod/1733423569732-2024-12-05T18:32:49.732Z/zootle-serverless.zip"
         },
         "Handler": "wsgi_handler.handler",
-        "Runtime": "python3.8",
+        "Runtime": "python3.10",
         "FunctionName": "zootle-serverless-prod-app",
         "MemorySize": 1024,
         "Timeout": 45,
@@ -179,14 +180,14 @@
         "AppLogGroup"
       ]
     },
-    "AppLambdaVersionOvFB1rL9KMVOlJOG3atxVkd9yV370crJVJJqX9wk": {
+    "AppLambdaVersionpnUvTzKV69ZskxnG3VpZfPvjTfRKQdWr9HQ9gSfrNJA": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AppLambdaFunction"
         },
-        "CodeSha256": "q/lkxZLA2Z2OGxwAeD4rAPlYjhLtN3eU3NgBE+ocOWk="
+        "CodeSha256": "2TDbc2yqBz9ywyx2c0q9+Jl8SRB4YVmJiarYJZSGIp4="
       }
     },
     "ApiGatewayRestApi": {
@@ -311,7 +312,7 @@
         "AppLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1678462275279": {
+    "ApiGatewayDeployment1733423560692": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -374,7 +375,7 @@
     "AppLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AppLambdaVersionOvFB1rL9KMVOlJOG3atxVkd9yV370crJVJJqX9wk"
+        "Ref": "AppLambdaVersionpnUvTzKV69ZskxnG3VpZfPvjTfRKQdWr9HQ9gSfrNJA"
       },
       "Export": {
         "Name": "sls-zootle-serverless-prod-AppLambdaFunctionQualifiedArn"

@@ -2,7 +2,7 @@
 parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 
 
-virtualenv venv --python=python3
+virtualenv venv --python=python3.10
 
 source venv/bin/activate
 
